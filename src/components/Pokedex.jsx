@@ -48,8 +48,10 @@ const Pokedex = () => {
 
     return (
         <div>
-            <h1>PokeDex</h1>
-            <p>Hola {user} bienvenido a la Pokedex</p>
+            <div className='header'>
+            <img src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png" alt="Login-PokeApi" />
+            <p>Welcome {user}, here you can find your favorite pokemon</p>
+            
             <form onSubmit={search}>
                 <input type="text" 
                 value={characterSearch}
@@ -57,6 +59,7 @@ const Pokedex = () => {
                 />
                 <button>Search</button>
             </form>
+            </div>
             <select onChange={filterType}>
                 <option value="">Selecciona el tipo de Pokemon</option>
                 <option value="">Todos</option>
@@ -79,7 +82,7 @@ const Pokedex = () => {
             onClick={()=> setPage(page+1)}
             disabled={page === lastPage}
             >Next Page</button>
-            <div>
+            <div className='container'>
                 {pokemonsPaginated.map(pokemon =>(
                      <CharacterItem 
                      pokemonUrl={pokemon.url ? pokemon.url : pokemon.pokemon.url} 

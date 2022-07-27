@@ -17,13 +17,19 @@ const UserInput = () => {
     }
 
     return (
-        <form onSubmit={submit}>
-            <input type="text" 
+        <div className='appLogin'>
+        <form className='formLogin' onSubmit={submit}>
+            <div>
+            <img src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png" alt="Logo_PokeApi" />
+            </div>
+            <input className='login' type="text" 
+            placeholder='Give me your name to start'
             value={userName}
             onChange={e => setUserName(e.target.value)}
             />
-            <button>Submit</button>
+            <button className='icon'><img src="https://icon-library.com/images/poke-ball-icon/poke-ball-icon-7.jpg" alt="Submit" /></button>
         </form>
+        </div>
     );
 };
 

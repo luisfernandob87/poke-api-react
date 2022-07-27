@@ -9,6 +9,7 @@ function App() {
 
 
   return (
+    <div className='App'>
     <HashRouter>
       <Routes>
         <Route path='/' element={<UserInput/>}/>
@@ -18,6 +19,7 @@ function App() {
         </Route>
       </Routes>
     </HashRouter>
+    </div>
   )
 }
 

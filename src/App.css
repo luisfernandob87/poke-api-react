@@ -1,3 +1,93 @@
-.App {
+.appLogin {
   text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.formLogin{
+  padding: 50px;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  background: rgba( 255, 255, 255, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+body{ 
+  background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 50%, rgba(255,0,0,1) 100%);
+}
+form img{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  max-width: 90%;
+}
+.icon{
+  display: block;
+  margin: 0 auto;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 125px;
+  animation: rotation 5s infinite linear;
+}
+.icon:hover{
+  scale: 1.1;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+.login{
+  height: 30px;
+  width: 90%;
+  border: none;
+  border-radius: 5px;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 10px;
+}
+@media (min-width: 576px) {
+  .container{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 768px) {
+  .container{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  .container{
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .container{
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+.pokedex{
+  text-align: center;
+  background: rgba( 255, 255, 255, 0.8 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 14px );
+-webkit-backdrop-filter: blur( 14px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.pokedex img{
+  max-width: 200px;
+}
+.header p{
+  
+  font-size: xx-large;
 }
