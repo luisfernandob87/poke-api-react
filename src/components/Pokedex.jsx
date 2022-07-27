@@ -35,16 +35,18 @@ const Pokedex = () => {
     const firstIndex = lastIndex - 16;
     const pokemonsPaginated = pokemons.slice(firstIndex, lastIndex);
 
-    const lastPage = Math.ceil(pokemons.length / 16)
+    const totalPages = Math.ceil(pokemons.length / 16)
 
     const numbers = [];
-    for (let index = 1; index <= lastPage; index++) {
+    for (let index = 1; index <= totalPages; index++) {
         numbers.push(index);
     }
-
-    const numbersAvailable = numbers.slice(0, 5);
-
-    console.log(numbersAvailable);
+    let numbersPaginated = []
+    if (numbers.length > 5) {
+       numbersPaginated = numbers.slice(0,5)
+       console.log('si es mayor');
+    }
+    console.log(numbersPaginated);
 
     return (
         <div>
@@ -61,11 +63,12 @@ const Pokedex = () => {
             </form>
             </div>
             <select onChange={filterType}>
-                <option value="">Selecciona el tipo de Pokemon</option>
-                <option value="">Todos</option>
+                <option value="null">Selecciona el tipo de Pokemon</option>
                 {
                     typePokemon.map(typePoke => (
-                        <option key={typePoke.url} value={typePoke.url}>{typePoke.name}</option>
+                        <option key={typePoke.url} 
+                        value={typePoke.url}
+                        >{typePoke.name}</option>
                     ))
                 }
                 
@@ -76,11 +79,12 @@ const Pokedex = () => {
             disabled={page === 1}
             >Prev Page</button>
             {numbers.map(number => (
-                <button onClick={() => setPage(number)} key={number}>{number}</button>
+                <button className='paginated' onClick={() => setPage(number)} key={number}>{number}</button>
             ))}
             <button 
+            className='paginated'
             onClick={()=> setPage(page+1)}
-            disabled={page === lastPage}
+            disabled={page === totalPages}
             >Next Page</button>
             <div className='container'>
                 {pokemonsPaginated.map(pokemon =>(

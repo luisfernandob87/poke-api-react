@@ -14,6 +14,8 @@ const PokemonDetail = () => {
         .catch(error => alert('Pokemon No Existe'))
     },[id])
 
+    // console.log(character);
+
     return (
         <div>
             <h1>PokemonDetail</h1>

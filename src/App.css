@@ -16,7 +16,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 body{ 
   background: rgb(255,255,255);
-  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 50%, rgba(255,0,0,1) 100%);
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 50%, rgb(245, 70, 70) 100%);
 }
 form img{
   margin-top: 20px;
@@ -83,11 +83,68 @@ backdrop-filter: blur( 14px );
 -webkit-backdrop-filter: blur( 14px );
 border-radius: 10px;
 border: 1px solid rgba( 255, 255, 255, 0.18 );
+cursor: pointer;
+}
+.containerImage{
+  position: relative;
+  top: 30%;
+  transform: translate(0, -50%);
 }
 .pokedex img{
-  max-width: 200px;
+  width: 100px;
 }
 .header p{
   
   font-size: xx-large;
+}
+.grass{
+  background: rgba(84, 189, 80, 0.8);
+}
+.fighting{
+  background: rgba(152, 70, 19, 0.8);
+}
+.flying{
+  background: rgba(169, 113, 78, 0.8);
+}
+.poison{
+  background: rgba(143, 20, 168, 0.8);
+}
+.ground{
+  background: rgba(173, 170, 168, 0.8);
+}
+.rock{
+  background: rgba(83, 81, 80, 0.8);
+}
+.bug{
+  background: rgba(160, 206, 165, 0.8);
+}
+.ghost{
+  background: rgba(90, 146, 191, 0.8);
+}
+.steel{
+  background: rgba(107, 172, 158, 0.8);
+}
+.fire{
+  background: rgba(196, 62, 62, 0.8);
+}
+.water{
+  background: rgba(79, 182, 193, 0.8);
+}
+.electric{
+  background: rgba(175, 192, 67, 0.8);
+}
+.psychic{
+  background: rgba(192, 89, 89, 0.8);
+}
+.ice{
+  background: rgba(3, 180, 220, 0.8);
+}
+.dragon{
+  background: rgba(85, 202, 185, 0.8);
+}
+.dark{
+  background: rgba(72, 72, 72, 0.8);
+}
+.fairy{
+  background: rgba(189, 63, 151, 0.8);
 }
