@@ -18,7 +18,7 @@ const UserInput = () => {
 
     return (
         <div className='appLogin'>
-        <form className='formLogin' onSubmit={submit}>
+        <form className='formLogin App' onSubmit={submit}>
             <div>
             <img src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png" alt="Logo_PokeApi" />
             </div>

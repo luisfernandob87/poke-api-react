@@ -14,11 +14,13 @@ backdrop-filter: blur( 4px );
 border-radius: 10px;
 border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
-body{ 
+.App{ 
   background: rgb(255,255,255);
   background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 50%, rgb(245, 70, 70) 100%);
+  border: none;
+  border-radius: 10px;
 }
-form img{
+.App img{
   margin-top: 20px;
   margin-bottom: 20px;
   max-width: 90%;
@@ -92,10 +94,7 @@ cursor: pointer;
 }
 .pokedex img{
   width: 100px;
-}
-.header p{
-  
-  font-size: xx-large;
+  height: 100px;
 }
 .grass{
   background: rgba(84, 189, 80, 0.8);
@@ -147,4 +146,24 @@ cursor: pointer;
 }
 .fairy{
   background: rgba(189, 63, 151, 0.8);
+}
+.containerButtons{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.paginated{
+  font-size: large;
+  color:#feca1b; 
+  background-color:#3761a8;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: none;
+  margin: 10px 5px;
+  cursor: pointer;
+}
+.selected{
+    color: #3761a8;
+  background-color: #feca1b;
 }

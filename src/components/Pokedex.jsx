@@ -34,26 +34,31 @@ const Pokedex = () => {
     const lastIndex = page * 16;
     const firstIndex = lastIndex - 16;
     const pokemonsPaginated = pokemons.slice(firstIndex, lastIndex);
-
     const totalPages = Math.ceil(pokemons.length / 16)
 
+    
+    let initialPage = page < 5 ? 1 : (page -4)    
+    let lastPage = totalPages  
+    if (page < (totalPages -5)) {
+        if (page > 5) {
+            lastPage = (page + 4)
+        }else{
+            lastPage = 9
+        }
+    }else{
+    }
+
     const numbers = [];
-    for (let index = 1; index <= totalPages; index++) {
+    for (let index = initialPage; index <= lastPage; index++) {
         numbers.push(index);
     }
-    let numbersPaginated = []
-    if (numbers.length > 5) {
-       numbersPaginated = numbers.slice(0,5)
-       console.log('si es mayor');
-    }
-    console.log(numbersPaginated);
 
     return (
-        <div>
-            <div className='header'>
+        <>
+            <div className='App'>
             <img src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png" alt="Login-PokeApi" />
+            </div>
             <p>Welcome {user}, here you can find your favorite pokemon</p>
-            
             <form onSubmit={search}>
                 <input type="text" 
                 value={characterSearch}
@@ -61,7 +66,6 @@ const Pokedex = () => {
                 />
                 <button>Search</button>
             </form>
-            </div>
             <select onChange={filterType}>
                 <option value="null">Selecciona el tipo de Pokemon</option>
                 {
@@ -74,18 +78,25 @@ const Pokedex = () => {
                 
             </select>
             <br />
+            <div className='containerButtons'>
             <button 
+            className='paginated'
             onClick={()=> setPage(page-1)}
             disabled={page === 1}
-            >Prev Page</button>
+            >&lt;</button>
             {numbers.map(number => (
-                <button className='paginated' onClick={() => setPage(number)} key={number}>{number}</button>
+                <button className={number === page ? 'paginated selected': 'paginated'} 
+                onClick={() => setPage(number)} 
+                key={number}
+                >{number}</button>
             ))}
+            
             <button 
             className='paginated'
             onClick={()=> setPage(page+1)}
             disabled={page === totalPages}
-            >Next Page</button>
+            >&gt;</button>
+            </div>
             <div className='container'>
                 {pokemonsPaginated.map(pokemon =>(
                      <CharacterItem 
@@ -93,7 +104,7 @@ const Pokedex = () => {
                      key={pokemon.url ? pokemon.url : pokemon.pokemon.url}/>   
                 ))}
             </div>
-        </div>
+        </>
     );
 };
 
