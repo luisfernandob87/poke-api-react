@@ -1,3 +1,6 @@
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 .appLogin {
   text-align: center;
   display: flex;
@@ -50,6 +53,8 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
   width: 90%;
   border: none;
   border-radius: 5px;
+  outline: none;
+  text-align: center;
 }
 
 .container{
@@ -166,4 +171,74 @@ cursor: pointer;
 .selected{
     color: #3761a8;
   background-color: #feca1b;
+}
+.welcome{
+  text-align: center;
+  font-size: x-large;
+}
+.search{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.containerSearch{
+  margin: 0 auto;
+  border-radius: 25px;
+  border: none;
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  width: fit-content;
+  height: fit-content;
+}
+.containerSearch input{
+  margin-left: 10px;
+  border: none;
+  background: transparent;
+  outline: none;
+}
+.search button{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.search img{
+  width: 40px;
+}
+.containerSelect{
+  padding: 5px;
+  width: fit-content;
+  margin-top: 15px;
+  border-radius: 15px;
+  border: none;
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+}
+select{
+  border: none;
+  outline: none;
+}
+
+/* POKEMON DETAILS */
+.pokemonDetail{
+  text-align: center;
+}
+.pokemonDetail img{
+  width: 400px;
+}
+.name{
+  margin: 0;
+  font-size:75px;
+  color: #feca1b;
+  padding: 20px;
+  -webkit-text-stroke: 1px #3761a8;
+}
+.name::first-letter{
+  text-transform: uppercase;
+}
+.moves{
+  display: flex;
+  flex-direction: column;
+}
+.moves p{
+  border-bottom: 1px solid black;
+
 }

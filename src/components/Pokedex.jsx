@@ -22,7 +22,6 @@ const Pokedex = () => {
     },[]);
 
     const search = () =>{
-        alert(characterSearch);
         const cleanCharacterSearch = characterSearch.toLowerCase().trim();
         navigate(`/pokedex/${cleanCharacterSearch}`);
     }
@@ -58,16 +57,20 @@ const Pokedex = () => {
             <div className='App'>
             <img src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png" alt="Login-PokeApi" />
             </div>
-            <p>Welcome {user}, here you can find your favorite pokemon</p>
-            <form onSubmit={search}>
+            <p className='welcome'>Welcome {user}, here you can find your favorite pokemon</p>
+            <div className='containerSearch'>           
+            <form className='search' onSubmit={search}>
                 <input type="text" 
+                placeholder='Search by name'
                 value={characterSearch}
                 onChange={(e)=> setCharacterSearch(e.target.value)}
                 />
-                <button>Search</button>
+                <button><img src="https://icon-library.com/images/poke-ball-icon/poke-ball-icon-7.jpg" alt="Submit" /></button>
             </form>
+            </div>
+            <div className='containerSelect'>            
             <select onChange={filterType}>
-                <option value="null">Selecciona el tipo de Pokemon</option>
+                <option value="null">List by type</option>
                 {
                     typePokemon.map(typePoke => (
                         <option key={typePoke.url} 
@@ -77,7 +80,7 @@ const Pokedex = () => {
                 }
                 
             </select>
-            <br />
+            </div>
             <div className='containerButtons'>
             <button 
             className='paginated'
