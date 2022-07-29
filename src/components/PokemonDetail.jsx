@@ -19,7 +19,8 @@ const PokemonDetail = () => {
   return (
     <div className="pokemonDetail">
       <h1 className="App name">{character.name}</h1>
-      <div>
+        <h2 className= {character.types?.[0].type.name + ' pokedex'}>General information</h2>
+      <div className="info">
         <p><strong>ID:</strong> {character.id}</p>
         <p><strong>Height: </strong>{character.height}</p>
         <p><strong>Weight: </strong>{character.weight}</p>
@@ -29,21 +30,22 @@ const PokemonDetail = () => {
          <p><strong>Type: </strong>{character.types?.[0].type.name} {character.types?.[1]?.type.name}
         </p>
       </div>
-      <img
+      <img 
         src={character.sprites?.other?.dream_world.front_default}
         alt="Images"
       />
-        <div>
+        <h2 className= {character.types?.[0].type.name + ' pokedex'}>Stats Base</h2>
+        <div className="base">
         {character.stats?.map((charac) => (
             <p key={charac.stat.name}>
             <strong>{charac.stat.name}: </strong>{charac.base_stat}
             </p>
         ))}
         </div>   
+        <h2 className= {character.types?.[0].type.name + ' pokedex'}>Movements</h2>
         <div className="moves">
-            <h2>Movements</h2>
             {character.moves?.map((chara) => (
-            <p key={chara.move.name}>{chara.move.name}</p>
+            <p key={chara.move.name}>{chara.move.name} </p>
             ))}      
         </div>
     </div>

@@ -222,11 +222,12 @@ select{
   text-align: center;
 }
 .pokemonDetail img{
-  width: 400px;
+  max-width: 99%;
+  filter: drop-shadow(-2px 2px 15px rgba(0, 0, 0, 0.75));
 }
 .name{
   margin: 0;
-  font-size:75px;
+  font-size:50px;
   color: #feca1b;
   padding: 20px;
   -webkit-text-stroke: 1px #3761a8;
@@ -236,9 +237,29 @@ select{
 }
 .moves{
   display: flex;
+  margin: 0 auto;
   flex-direction: column;
+  justify-content: center;
+
 }
 .moves p{
   border-bottom: 1px solid black;
-
+}
+@media (min-width: 768px) {
+.pokemonDetail div{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+}
+@media (min-width: 992px) {
+  .pokemonDetail div{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (min-width: 1200px) {
+  .pokemonDetail div{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
